@@ -6,12 +6,12 @@
     "fsr_icon_2": "../../assets/icons/OPAL.png",
     "fsr_link_2": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/15833497605",
     "fsr_icon_dashboard_style": "",
-    "fsr_icon_dashboard_style_2": "max-height: 20px; margin-top: 10px; padding-right:10px",
+    "fsr_icon_dashboard_style_2": "max-height: 20px; margin-top: 8px; padding-right: 8px",
     "footer_icons_display": ["selma", "opal", "qis", "matrix", "msx", "cloud", "swdd", "geoportal"],
     "footer_icons_links": {
       "swdd": "https://www.studentenwerk-dresden.de/mensen/speiseplan/mensa-siedepunkt.html"
     },
-    "invert_icon_dark_theme": false
+    "invert_icon_dark_theme": true
   },
   "maschinenbau": {
     "name": "Maschinenwesen",
@@ -48,7 +48,7 @@
   },
   "medizin": {
     "name": "Medizin",
-    "fsr_icon": "../../assets/icons/FSRIcons/fsr_medi_small.png",
+    "fsr_icon": "../../assets/icons/FSRIcons/fsr_medi.png",
     "fsr_link": "https://www.medforum-dresden.de/",
     "fsr_icon_dashboard_style": "",
     "footer_icons_display": ["selma", "opal", "moodle", "eportal", "msx", "cloud", "swdd"],
@@ -81,7 +81,7 @@
   },
   "elektrotechnik": {
     "name": "Elektrotechnik",
-    "fsr_icon": "../../assets/icons/FSRIcons/FSR_ET.png",
+    "fsr_icon": "../../assets/icons/FSRIcons/fsr_et.png",
     "fsr_icon_dashboard_style": "max-height: 32px;",
     "fsr_link": "https://fsret.de",
     "footer_icons_display": ["selma", "opal", "qis", "matrix", "msx", "cloud", "swdd"],
@@ -90,7 +90,6 @@
     },
     "invert_icon_dark_theme": true
   },
-
   "bauingenieurwesen": {
     "name": "Bauingenieurwesen",
     "fsr_icon": "../../assets/icons/FSRIcons/fsr_bauing.png",
@@ -98,6 +97,21 @@
     "fsr_link": "https://www.tud-fsrbiw.de/",
     "pa_link": "https://tu-dresden.de/bu/bauingenieurwesen/studium/infos-fuer-aktuell-studierende/pruefungsamt",
     "footer_icons_display": ["selma", "opal", "matrix", "msx", "slub", "pa", "cloud", "swdd", "nautos"],
+    "footer_icons_links": {
+      "swdd": "https://www.studentenwerk-dresden.de/mensen/speiseplan/"
+    },
+    "invert_icon_dark_theme": false
+  },
+  "verkehr": {
+    "name": "Verkehrswissenschaften \"Friedrich List\"",
+    "fsr_icon": "../../assets/icons/FSRIcons/fsr_verkehr.png",
+    "fsr_link": "https://www.fsr-verkehr.de/",
+    "fsr_icon_2": "../../assets/icons/fsr_verkehr_download.png",
+    "fsr_link_2": "https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/28036399111?3",
+    "fsr_icon_dashboard_style": "max-height: 32px;",
+    "fsr_icon_dashboard_style_2": "max-height: 32px;",
+    "pa_link": "https://tu-dresden.de/bu/verkehr/studium/pruefungsamt",
+    "footer_icons_display": ["selma", "opal", "msx", "slub", "tu-navi", "marudor", "cloud", "swdd"],
     "footer_icons_links": {
       "swdd": "https://www.studentenwerk-dresden.de/mensen/speiseplan/"
     },

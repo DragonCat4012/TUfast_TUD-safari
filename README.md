@@ -1,35 +1,46 @@
 [![ESlint](https://badges.aleen42.com/src/eslint.svg)](https://eslint.org/)
 ![Test and Build](https://github.com/TUfast-TUD/TUfast_TUD/actions/workflows/node.js.yml/badge.svg?branch=main)
 ![Release](https://github.com/TUfast-TUD/TUfast_TUD/actions/workflows/release.yml/badge.svg?branch=main)
+![Release Version](https://img.shields.io/github/v/release/TUfast-TUD/TUfast_TUD)
+![Latest Release](https://img.shields.io/github/release-date/TUfast-TUD/TUfast_TUD)
+![License](https://img.shields.io/github/license/TUfast-TUD/TUfast_TUD)
+
+![Contributors](https://img.shields.io/github/contributors/TUfast-TUD/TUfast_TUD)
+![Last Commit](https://img.shields.io/github/last-commit/TUfast-TUD/TUfast_TUD)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/TUfast-TUD/TUfast_TUD)
+
+[![Support me on Buy Me a Coffee](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee)](https://www.buymeacoffee.com/olihausdoerfer)
 
 
 # TUfast TU Dresden 🚀
-TUfast ist eine Browser-Erweiterung, um die Online-Portale der TU Dresden schneller und einfacher nutzerbar zu machen. TUfast ein ein studentisches, quelloffenes Projekt und hat mittlerweils über 1500 Nutzer! Verfügbar auf [www.tu-fast.de](https://www.tu-fast.de).
+TUfast simplifies and unifies online teaching tools at TU Dresden!
 
-![image](https://user-images.githubusercontent.com/31124624/115123463-72e24980-9fbd-11eb-8ff9-7466ba8e0df2.png)
+<img width="2777" height="1076" alt="image" src="https://github.com/user-attachments/assets/f2071e74-4691-480c-b858-c22fd44d39b3" />
 
-### Einige Funktionen
- - Automatisches Anmelden in OPAL, Selma und Co. (in insgesamt über 11 Portale der TU Dresden!)
- - OPAL-Kurse und OPAL-Favoriten über das Dashbaord öffnen
- - Benachrichtigungen für neue E-Mails im TU Dresden Postfach
- - Abkürzungen in der Google-Suche, z.B. "tumail" öffnet OWA Mail TU Dresden
- - Shortcuts für TU Dresden IT-Services, z.B. Alt+O öffnet OPAL
- - Notenstatistik im Hisqisi & coole Tabelle
- - ... weitere Optionen findest du in TUfast :)
+TUfast is a student project that makes the online portals of TU Dresden faster and easier to use. TUfast has more than 4.000 users and can be installed as a browser extension at [www.tu-fast.de](http://www.tu-fast.de).
 
-## Installation
-Gehe einfach auf www.tu-fast.de und wähle deinen Browser aus. Du wirst dann in den entsprechenden Webstore weitergeleitet und kannst die Erweiterung ganz einfach installieren
 
-## Datenschutz
-Die Anwendung sammelt keine Informationen über die Nutzer. Daten werden nur lokal auf dem PC gespeichert und verschlüsselt.
-Siehe auch [Datenschutzerklärung](https://tu-fast.de/datenschutz).
+#### TUfast has many features, including...
 
-## Das Projekt unterstützen❤️
-Danke an alle [Contributor](https://github.com/TUfast-TUD/TUfast_TUD/graphs/contributors) und Unterstützer. Das ist großartige Arbeit für die Studierenden und die TU Dresden! [Hier](https://www.buymeacoffee.com/olihausdoerfer) kannst du das Entwicklerteam mit einem kleinen Snack unterstützen.
+* Automatic login to all online portals (AutoLogin) (including [2FA](https://github.com/TUfast-TUD/TUfast_TUD/blob/main/docs/2FA.md))
+* Fast-access to all online portals, and shortcuts, e.g. “Alt+M” to open email
+* Find OPAL courses quickly in the dashboard
+* Notifications for new emails in your TU OWA-inbox
+* Customize and improve your OPAL experience
+* ... and many more can be found in TUfast :)
 
-## Zum Projekt beitragen (Contributing)
+## 🚀 Using TUfast
+Simply visit [www.tu-fast.de](https://www.tu-fast.de) and select your browser to be redirected to the webstore for free installation.
+
+## 🔒 Privacy information
+TUfast does not collect any information about the users. Data is only stored locally on your PC and is encrypted. For full information, see our [Privacy Policy](https://tu-fast.de/datenschutz).
+
+## 👩‍💻 Contributing
 Consult [CONTRIBUTING.md](https://github.com/TUfast-TUD/TUfast_TUD/blob/main/CONTRIBUTING.md) for information.
 
-## Kontakt, Support und Feedback
-Sende eine Mail an frage@tu-fast.de oder eröffne einen Issue.
+## ❤️ Supporting
+You can support the development team with a little snack [here](https://www.buymeacoffee.com/olihausdoerfer). Thanks to all the [contributors](https://github.com/TUfast-TUD/TUfast_TUD/graphs/contributors) and supporters! It's great work for all students at TU Dresden!  
+[![Support me on Buy Me a Coffee](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee)](https://www.buymeacoffee.com/olihausdoerfer)
 
+## Contact, Support, and Feedback  
+Send an email to frage@tu-fast.de or open an issue on GitHub.

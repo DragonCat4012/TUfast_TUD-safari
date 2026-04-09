@@ -24,8 +24,15 @@ function resetColor() {
   document.documentElement.style.removeProperty('--counter-color')
 }
 
-// Main function
-;(async () => {
+// Main injection logic
+async function injectLogo() {
+  // Check if logo already exists
+  if (document.getElementById('TUfastIcon')) return
+
+  // Check if page-header exists
+  const pageHeader = document.getElementsByClassName('page-header')[0]
+  if (!pageHeader) return
+
   // Get initial values
   const { selectedRocketIcon, isEnabled, fwdEnabled, foundEasteregg } = await chrome.storage.local.get([
     'selectedRocketIcon',
@@ -67,7 +74,60 @@ function resetColor() {
   logo.src = iconURL
   logo.id = 'TUfastIcon'
   logo.title = 'Powered by TUfast. Enjoy :)'
-  document.getElementsByClassName('page-header')[0]?.appendChild(document.createElement('h1')).appendChild(logo)
+  // Create container div and insert logo
+  const div = document.createElement('div')
+  div.className = 'tufast-opal-header'
+  div.style.cssText =
+    'display: flex; flex-direction: row; gap: 16px; align-items: center; height: 100%; padding-top: 9px;'
+  pageHeader.appendChild(div)
+  div.appendChild(logo)
+
+  // Helper function to maintain button order in header
+  // Order: Logo - snow - openAllCourses - openAllFavorites - closeAllTabs
+  const maintainButtonOrder = () => {
+    const header = document.querySelector('.tufast-opal-header')
+    if (!header) return
+
+    const logo = header.querySelector('#TUfastIcon')
+    const snow = header.querySelector('#flakeSwitch')
+    const openAllCourses = header.querySelector('#openAllCoursesButton')
+    const openAllFavorites = header.querySelector('#openAllFavoritesButton')
+    const closeAllTabs = header.querySelector('#closeAllTabsButton')
+
+    const desiredOrder = [logo, snow, openAllCourses, openAllFavorites, closeAllTabs].filter(Boolean)
+
+    // Check if reordering is actually needed
+    const currentOrder = Array.from(header.children)
+    const needsReorder = desiredOrder.some((el, idx) => {
+      const currentIdx = currentOrder.indexOf(el!)
+      return currentIdx !== idx
+    })
+
+    if (!needsReorder) return
+
+    // Temporarily disconnect observer to avoid infinite loop
+    orderObserver.disconnect()
+
+    desiredOrder.forEach((element) => {
+      if (element) header.appendChild(element)
+    })
+
+    // Reconnect observer
+    orderObserver.observe(div, {
+      childList: true
+    })
+  }
+
+  // Observe changes to maintain order when other scripts inject their buttons
+  const orderObserver = new MutationObserver(() => {
+    maintainButtonOrder()
+  })
+
+  orderObserver.observe(div, {
+    childList: true
+  })
+
+  maintainButtonOrder()
 
   // What to do onclick
   const onClickWhenFound = () => {
@@ -117,6 +177,7 @@ function resetColor() {
       onClickSettings.overlay.style.fontSize = '150px'
       timeout = 1000
       onClickSettings.blocker = false
+      onClickSettings.overlay.style.fontWeight = 'bold'
       onClickSettings.overlay.innerHTML = onClickSettings.counter.toString()
     }
 
@@ -130,4 +191,34 @@ function resetColor() {
       resetColor()
     }, timeout)
   })
+}
+
+// Initialize and watch for changes
+;(async () => {
+  // Initial injection
+  await injectLogo()
+
+  // Watch for DOM changes (SPA navigation)
+  const observer = new MutationObserver(async (mutations) => {
+    // Check if page-header exists and logo doesn't
+    if (document.getElementsByClassName('page-header')[0] && !document.getElementById('TUfastIcon')) {
+      await injectLogo()
+    }
+  })
+
+  // Start observing the document body for changes
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  })
+
+  // Also listen for URL changes (some SPAs use history API)
+  let lastUrl = location.href
+  new MutationObserver(() => {
+    const url = location.href
+    if (url !== lastUrl) {
+      lastUrl = url
+      setTimeout(() => injectLogo(), 100) // Small delay to let DOM update
+    }
+  }).observe(document, { subtree: true, childList: true })
 })()
